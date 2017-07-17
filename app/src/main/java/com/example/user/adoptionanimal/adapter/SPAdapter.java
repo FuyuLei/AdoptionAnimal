@@ -6,31 +6,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.example.user.adoptionanimal.R;
-import com.example.user.adoptionanimal.model.Adoption;
 import com.example.user.adoptionanimal.model.Animal;
 
-import java.util.ArrayList;
+import org.w3c.dom.Text;
 
-public class AdoptionAnimalAdapter extends BaseAdapter {
+public class SPAdapter extends BaseAdapter {
+
     private Context context;
-    private ArrayList<Animal> list;
+    private String[] array;
 
-    public AdoptionAnimalAdapter(Context context, ArrayList<Animal> list) {
+    public SPAdapter(Context context, String[] array) {
         this.context = context;
-        this.list = list;
+        this.array = array;
     }
-
 
     @Override
     public int getCount() {
-        return list.size();
+        return array.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return list.get(position);
+        return array[position];
     }
 
     @Override
@@ -42,17 +42,21 @@ public class AdoptionAnimalAdapter extends BaseAdapter {
     public View getView(int position, View v, ViewGroup parent) {
         ViewHolder h;
         if (v == null) {
-            v = LayoutInflater.from(context).inflate(R.layout.item_rv_animal, null);
-            h = new ViewHolder();
+            v = LayoutInflater.from(context).inflate(R.layout.item_sp, null);
+            h = new ViewHolder(v);
             v.setTag(h);
-        } else {
+        }else {
             h = (ViewHolder) v.getTag();
         }
-        final Animal item = (Animal) getItem(position);
-        h.
+        h.content.setText(getItem(position).toString());
+        return v;
     }
 
     private class ViewHolder {
+        TextView content;
 
+        ViewHolder(View v) {
+            content = (TextView) v.findViewById(R.id.tv_item_sp_content);
+        }
     }
 }

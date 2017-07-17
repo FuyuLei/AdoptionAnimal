@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">AdoptionAnimal</string>
+
+    <string-array name="sex">
+        <item>未選擇</item>
+        <item>雄</item>
+        <item>雌</item>
+    </string-array>
+
+    <string-array name="type">
+        <item>未選擇</item>
+        <item>貓</item>
+        <item>犬</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="build">
+        <item>未選擇</item>
+        <item>大</item>
+        <item>中</item>
+        <item>小</item>
+        <item>幼</item>
+    </string-array>
+
+    <string-array name="age">
+        <item>未選擇</item>
+        <item>幼齡</item>
+        <item>年輕</item>
+        <item>成年</item>
+        <item>老年</item>
+    </string-array>
 </resources>

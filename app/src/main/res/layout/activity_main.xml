@@ -15,6 +15,42 @@
         android:orientation="vertical"
         android:layout_marginBottom="6pt">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="體型："
+            android:textSize="6pt"
+            android:textColor="#333"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="幼：幼齡　　　　  小型：9公斤以下"
+            android:textSize="6pt" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="中型：9至23公斤　大型：23公斤以上"
+            android:textSize="6pt"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="年齡："
+            android:textSize="6pt"
+            android:textColor="#333"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="幼齡：3個月齡以下　年輕：3個月齡至1年"
+            android:textSize="6pt" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="成年：1至7歲　　　  老年：7歲以上"
+            android:textSize="6pt"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,7 +99,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center" />
             </LinearLayout>
-
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/style_bg_spinner"
+            android:padding="4dp">
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -108,6 +150,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_main_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/style_bg_btn"
@@ -119,7 +162,8 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="wrap_content"
+        android:id="@+id/rv_main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </android.support.v7.widget.RecyclerView>
