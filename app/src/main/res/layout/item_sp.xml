@@ -8,7 +8,9 @@
         android:id="@+id/tv_item_sp_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="7pt"
-        android:textColor="#000"/>
+        android:textSize="8pt"
+        android:textColor="#000"
+        android:layout_margin="4dp" />
+
 
 </LinearLayout>

@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sp_build.setAdapter(new SPAdapter(this, builds));
         sp_age.setAdapter(new SPAdapter(this, ages));
 
+
         //init RecyclerView
         list_animal = new ArrayList<>();
         list_animal_show = new ArrayList<>();
@@ -99,19 +100,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        String sex = sexs[sp_sex.getSelectedItemPosition()];
-        String type = types[sp_type.getSelectedItemPosition()];
-        String build = builds[sp_build.getSelectedItemPosition()];
-        String age = ages[sp_age.getSelectedItemPosition()];
+        int sexPosition = sp_sex.getSelectedItemPosition();
+        int typePosition = sp_type.getSelectedItemPosition();
+        int buildPosition = sp_build.getSelectedItemPosition();
+        int agePosition = sp_age.getSelectedItemPosition();
+        String sex = sexs[sexPosition];
+        String type = types[typePosition];
+        String build = builds[buildPosition];
+        String age = ages[agePosition];
         list_animal_show.clear();
         for (Animal animal : list_animal) {
-            if (animal.getSex().equals(sex)
-                && animal.getType().equals(type)
-                && animal.getBuild().equals(build)
-                && animal.getAge().equals(age)) {
-                list_animal_show.add(animal);
-                list_animal_show.add(animal);
-                list_animal_show.add(animal);
+            // sex
+            boolean sexPass = sexPosition == 0 || animal.getSex().equals(sex);
+            //type
+            boolean typePass = typePosition == 0 || animal.getType().equals(type);
+            //build
+            boolean buildPass = buildPosition == 0 || animal.getBuild().equals(build);
+            //age
+            boolean agePass = agePosition == 0 || animal.getAge().equals(age);
+
+            if (sexPass & typePass & buildPass & agePass) {
                 list_animal_show.add(animal);
             }
         }

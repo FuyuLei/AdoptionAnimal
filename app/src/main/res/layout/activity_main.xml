@@ -55,20 +55,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@drawable/style_bg_spinner"
-            android:padding="4dp">
+>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/style_bg_spinner"
+                android:padding="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="性別"
+                    android:text="性　　別"
                     android:textColor="#000"
                     android:textSize="7pt" />
 
@@ -76,14 +77,17 @@
                     android:id="@+id/sp_main_sex"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
+                    android:gravity="right"
+                    android:layout_gravity="center"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/style_bg_spinner"
+                android:padding="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,6 +101,7 @@
                     android:id="@+id/sp_main_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:layout_gravity="center" />
             </LinearLayout>
         </LinearLayout>
@@ -104,19 +109,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@drawable/style_bg_spinner"
-            android:padding="4dp">
+>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/style_bg_spinner"
+                android:padding="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="體型"
+                    android:text="體　　型"
                     android:textColor="#000"
                     android:textSize="7pt" />
 
@@ -124,6 +130,7 @@
                     android:id="@+id/sp_main_build"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:layout_gravity="center" />
             </LinearLayout>
 
@@ -131,13 +138,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/style_bg_spinner"
+                android:padding="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="年齡"
+                    android:text="年　　齡"
                     android:textColor="#000"
                     android:textSize="7pt" />
 
@@ -145,6 +154,7 @@
                     android:id="@+id/sp_main_age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="right"
                     android:layout_gravity="center" />
             </LinearLayout>
         </LinearLayout>

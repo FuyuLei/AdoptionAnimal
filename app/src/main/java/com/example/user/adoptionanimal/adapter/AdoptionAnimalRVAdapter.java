@@ -36,11 +36,7 @@ public class AdoptionAnimalRVAdapter extends RecyclerView.Adapter {
         if (holder instanceof ViewHolder) {
             ViewHolder h = (ViewHolder) holder;
             final Animal item = list.get(position);
-            if(h.name ==null){
-                h.name.setText("尚未取名字");
-            }else {
-                h.name.setText(item.getName());
-            }
+            h.name.setText(item.getName());
             h.sex.setText(item.getSex());
             h.type.setText(item.getType());
             h.build.setText(item.getBuild());
