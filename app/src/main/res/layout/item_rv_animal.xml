@@ -16,18 +16,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="4dp">
+            android:layout_margin="4dp"
+            android:background="@drawable/style_bg_item_rv_tv">
 
             <ImageView
                 android:id="@+id/iv_item_rv_animal_img"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/style_bg_item_rv_tv">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"

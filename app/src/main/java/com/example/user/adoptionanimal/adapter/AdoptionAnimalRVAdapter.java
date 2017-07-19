@@ -14,6 +14,7 @@ import com.example.user.adoptionanimal.R;
 import com.example.user.adoptionanimal.activity.MainActivity;
 import com.example.user.adoptionanimal.model.Adoption;
 import com.example.user.adoptionanimal.model.Animal;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,6 +37,10 @@ public class AdoptionAnimalRVAdapter extends RecyclerView.Adapter {
         if (holder instanceof ViewHolder) {
             ViewHolder h = (ViewHolder) holder;
             final Animal item = list.get(position);
+            Picasso.with(context)
+                    .load(item.getImageName())
+                    .resize(350, 350)
+                    .centerCrop().into(h.img);
             h.name.setText(item.getName());
             h.sex.setText(item.getSex());
             h.type.setText(item.getType());
