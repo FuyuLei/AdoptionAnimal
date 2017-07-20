@@ -1,6 +1,9 @@
 package com.example.user.adoptionanimal.model;
 
-public class Animal {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Animal implements Parcelable{
     private String _id;
     private String Name;
     private String Sex;
@@ -21,6 +24,44 @@ public class Animal {
     private String AnimalAnlong;
     private String Bodyweight;
     private String ImageName;
+
+    public Animal(){
+    }
+
+    protected Animal(Parcel in) {
+        _id = in.readString();
+        Name = in.readString();
+        Sex = in.readString();
+        Type = in.readString();
+        Build = in.readString();
+        Age = in.readString();
+        Variety = in.readString();
+        Reason = in.readString();
+        AcceptNum = in.readString();
+        ChipNum = in.readString();
+        IsSterilization = in.readString();
+        HairType = in.readString();
+        Note = in.readString();
+        Resettlement = in.readString();
+        Phone = in.readString();
+        Email = in.readString();
+        ChildreAnlong = in.readString();
+        AnimalAnlong = in.readString();
+        Bodyweight = in.readString();
+        ImageName = in.readString();
+    }
+
+    public static final Creator<Animal> CREATOR = new Creator<Animal>() {
+        @Override
+        public Animal createFromParcel(Parcel in) {
+            return new Animal(in);
+        }
+
+        @Override
+        public Animal[] newArray(int size) {
+            return new Animal[size];
+        }
+    };
 
     public String get_id() {
         return _id;
@@ -180,5 +221,34 @@ public class Animal {
 
     public void setImageName(String ImageName) {
         this.ImageName = ImageName;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(_id);
+        dest.writeString(Name);
+        dest.writeString(Sex);
+        dest.writeString(Type);
+        dest.writeString(Build);
+        dest.writeString(Age);
+        dest.writeString(Variety);
+        dest.writeString(Reason);
+        dest.writeString(AcceptNum);
+        dest.writeString(ChipNum);
+        dest.writeString(IsSterilization);
+        dest.writeString(HairType);
+        dest.writeString(Note);
+        dest.writeString(Resettlement);
+        dest.writeString(Phone);
+        dest.writeString(Email);
+        dest.writeString(ChildreAnlong);
+        dest.writeString(AnimalAnlong);
+        dest.writeString(Bodyweight);
+        dest.writeString(ImageName);
     }
 }

@@ -1,18 +1,17 @@
 package com.example.user.adoptionanimal.adapter;
 
 import android.content.Context;
-import android.provider.ContactsContract;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.user.adoptionanimal.R;
-import com.example.user.adoptionanimal.activity.MainActivity;
-import com.example.user.adoptionanimal.model.Adoption;
+import com.example.user.adoptionanimal.activity.AnimalInformationActivity;
 import com.example.user.adoptionanimal.model.Animal;
 import com.squareup.picasso.Picasso;
 
@@ -28,12 +27,12 @@ public class AdoptionAnimalRVAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, final int viewType) {
         return new ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_rv_animal, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof ViewHolder) {
             ViewHolder h = (ViewHolder) holder;
             final Animal item = list.get(position);
@@ -46,6 +45,17 @@ public class AdoptionAnimalRVAdapter extends RecyclerView.Adapter {
             h.type.setText(item.getType());
             h.build.setText(item.getBuild());
             h.age.setText(item.getAge());
+            h.itemView.findViewById(R.id.cv_item_rv_animal).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = holder.getAdapterPosition();
+                    Animal animal = list.get(position);
+                    Intent intent = new Intent();
+                    intent.setClass(context, AnimalInformationActivity.class);
+                    intent.putExtra("Animal", animal);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 

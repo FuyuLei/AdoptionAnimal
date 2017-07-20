@@ -1,10 +1,13 @@
 package com.example.user.adoptionanimal.activity;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -15,7 +18,6 @@ import com.example.user.adoptionanimal.adapter.AdoptionAnimalRVAdapter;
 import com.example.user.adoptionanimal.adapter.SPAdapter;
 import com.example.user.adoptionanimal.model.Adoption;
 import com.example.user.adoptionanimal.model.Animal;
-import com.example.user.adoptionanimal.model.Result;
 import com.example.user.adoptionanimal.retrofit.AdoptionAnimalService;
 
 import java.util.ArrayList;
@@ -24,7 +26,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private RecyclerView rv;
     private Spinner sp_sex;
@@ -69,7 +71,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rv.setAdapter(adapter);
 
         getAdoptionAnimal();
-
         btn_search.setOnClickListener(this);
     }
 
@@ -100,29 +101,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        int sexPosition = sp_sex.getSelectedItemPosition();
-        int typePosition = sp_type.getSelectedItemPosition();
-        int buildPosition = sp_build.getSelectedItemPosition();
-        int agePosition = sp_age.getSelectedItemPosition();
-        String sex = sexs[sexPosition];
-        String type = types[typePosition];
-        String build = builds[buildPosition];
-        String age = ages[agePosition];
-        list_animal_show.clear();
-        for (Animal animal : list_animal) {
-            // sex
-            boolean sexPass = sexPosition == 0 || animal.getSex().equals(sex);
-            //type
-            boolean typePass = typePosition == 0 || animal.getType().equals(type);
-            //build
-            boolean buildPass = buildPosition == 0 || animal.getBuild().equals(build);
-            //age
-            boolean agePass = agePosition == 0 || animal.getAge().equals(age);
+        switch (v.getId()){
+            case R.id.btn_main_search:
+                int sexPosition = sp_sex.getSelectedItemPosition();
+                int typePosition = sp_type.getSelectedItemPosition();
+                int buildPosition = sp_build.getSelectedItemPosition();
+                int agePosition = sp_age.getSelectedItemPosition();
+                String sex = sexs[sexPosition];
+                String type = types[typePosition];
+                String build = builds[buildPosition];
+                String age = ages[agePosition];
+                list_animal_show.clear();
+                for (Animal animal : list_animal) {
+                    // sex
+                    boolean sexPass = sexPosition == 0 || animal.getSex().equals(sex);
+                    //type
+                    boolean typePass = typePosition == 0 || animal.getType().equals(type);
+                    //build
+                    boolean buildPass = buildPosition == 0 || animal.getBuild().equals(build);
+                    //age
+                    boolean agePass = agePosition == 0 || animal.getAge().equals(age);
 
-            if (sexPass & typePass & buildPass & agePass) {
-                list_animal_show.add(animal);
-            }
+                    if (sexPass & typePass & buildPass & agePass) {
+                        list_animal_show.add(animal);
+                    }
+                }
+                updateAdapter();
+                break;
         }
-        updateAdapter();
+
     }
 }
