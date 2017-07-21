@@ -6,259 +6,288 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.example.user.adoptionanimal.activity.AnimalInformationActivity">
+    tools:context="com.example.user.adoptionanimal.activity.AnimalInformationActivity"
+    android:background="#FFC290">
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/iv_animal_information_img"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+            android:layout_height="match_parent"
+            android:background="@drawable/style_bg_tv"
+            android:orientation="vertical"
+            android:padding="8dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="姓名："
-                android:textColor="#000"
-                android:textSize="7pt"/>
-
-            <TextView
-                android:id="@+id/tv_animal_information_name"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:orientation="vertical"
+                android:padding="7dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <ImageView
+                    android:id="@+id/iv_animal_information_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="性別："
-                android:textColor="#000"
-                android:textSize="7pt"/>
-
-            <TextView
-                android:id="@+id/tv_animal_information_sex"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="姓　　名："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="種類："
-                android:textColor="#000"
-                android:textSize="7pt"/>
+                <TextView
+                    android:id="@+id/tv_animal_information_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_animal_information_type"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性　　別："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="體型："
-                android:textColor="#000"
-                android:textSize="7pt"/>
+                <TextView
+                    android:id="@+id/tv_animal_information_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_animal_information_build"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="種　　類："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="年齡："
-                android:textColor="#000"
-                android:textSize="7pt"/>
+                <TextView
+                    android:id="@+id/tv_animal_information_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_animal_information_age"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="體　　型："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="品種："
-                android:textColor="#000"
-                android:textSize="7pt"/>
+                <TextView
+                    android:id="@+id/tv_animal_information_build"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_animal_information_variety"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年　　齡："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="進所原因："
-                android:textColor="#000"
-                android:textSize="7pt"/>
+                <TextView
+                    android:id="@+id/tv_animal_information_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_animal_information_reason"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="品　　種："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="收容編號："
-                android:textColor="#000"
-                android:textSize="7pt"/>
+                <TextView
+                    android:id="@+id/tv_animal_information_variety"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_animal_information_acceptNum"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="進所原因："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="毛色："
-                android:textColor="#000"
-                android:textSize="7pt"/>
+                <TextView
+                    android:id="@+id/tv_animal_information_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_animal_information_hairType"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="收容編號："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="聯絡單位："
-                android:textColor="#000"
-                android:textSize="7pt" />
+                <TextView
+                    android:id="@+id/tv_animal_information_acceptNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_animal_information_resettlement"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="毛　　色："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="絕育："
-                android:textColor="#000"
-                android:textSize="7pt"/>
+                <TextView
+                    android:id="@+id/tv_animal_information_hairType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_animal_information_isSterilization"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
-        </LinearLayout>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="4dp">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="聯絡單位："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="註記："
-                android:textColor="#000"
-                android:textSize="7pt"/>
+                <TextView
+                    android:id="@+id/tv_animal_information_resettlement"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_animal_information_note"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="7pt"/>
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="絕　　育："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
+
+                <TextView
+                    android:id="@+id/tv_animal_information_isSterilization"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="註　　記："
+                    android:textColor="#000"
+                    android:textSize="8pt" />
+
+                <TextView
+                    android:id="@+id/tv_animal_information_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#795548"
+                    android:textSize="8pt" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 
 </LinearLayout>

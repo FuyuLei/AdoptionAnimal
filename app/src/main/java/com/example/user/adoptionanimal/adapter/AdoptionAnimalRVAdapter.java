@@ -2,7 +2,7 @@ package com.example.user.adoptionanimal.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.CardView;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +20,7 @@ import java.util.ArrayList;
 public class AdoptionAnimalRVAdapter extends RecyclerView.Adapter {
     private Context context;
     private ArrayList<Animal> list;
+    int w ;
 
     public AdoptionAnimalRVAdapter(Context context, ArrayList<Animal> list) {
         this.context = context;
@@ -33,14 +34,21 @@ public class AdoptionAnimalRVAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
+        w = (int) context.getResources().getDimension(R.dimen.animal_small);
         if (holder instanceof ViewHolder) {
             ViewHolder h = (ViewHolder) holder;
             final Animal item = list.get(position);
             Picasso.with(context)
                     .load(item.getImageName())
-                    .resize(350, 350)
+                    .resize(w, w)
                     .centerCrop().into(h.img);
-            h.name.setText(item.getName());
+            if(item.getName().equals("") ){
+                h.name.setText("尚未取名字");
+                h.name.setTextColor(Color.parseColor("#bcaaa4"));
+            }else {
+                h.name.setText(item.getName());
+                h.name.setTextColor(Color.parseColor("#866161"));
+            }
             h.sex.setText(item.getSex());
             h.type.setText(item.getType());
             h.build.setText(item.getBuild());

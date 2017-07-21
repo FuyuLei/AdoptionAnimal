@@ -1,7 +1,7 @@
 package com.example.user.adoptionanimal.activity;
 
 import android.content.Context;
-import android.net.Uri;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.example.user.adoptionanimal.R;
 import com.example.user.adoptionanimal.model.Animal;
 import com.squareup.picasso.Picasso;
+
 
 public class AnimalInformationActivity extends AppCompatActivity {
 
@@ -64,21 +65,49 @@ public class AnimalInformationActivity extends AppCompatActivity {
         String isSterilization = animal.getIsSterilization();
         String note = animal.getNote();
 
+        int w = (int) getResources().getDimension(R.dimen.animal_big);
         Picasso.with(context)
                 .load(img)
-                .resize(600, 600)
+                .resize(w, w)
                 .centerCrop().into(iv_img);
-        tv_name.setText(name);
+
+        if (name.equals("")) {
+            tv_name.setText("尚未取名字");
+            tv_name.setTextColor(Color.parseColor("#bcaaa4"));
+        } else {
+            tv_name.setText(name);
+        }
+
         tv_sex.setText(sex);
         tv_type.setText(type);
         tv_build.setText(build);
         tv_age.setText(age);
         tv_variety.setText(variety);
-        tv_reason.setText(reason);
+
+        if (reason.equals("")) {
+            tv_reason.setText("未提供");
+            tv_reason.setTextColor(Color.parseColor("#bcaaa4"));
+        } else {
+            tv_reason.setText(reason);
+        }
+
         tv_acceptNum.setText(acceptNum);
         tv_hairtype.setText(hairtype);
-        tv_resettlement.setText(resettlement);
+
+        if (resettlement.equals("")) {
+            tv_resettlement.setText("未提供");
+            tv_resettlement.setTextColor(Color.parseColor("#bcaaa4"));
+        } else {
+            tv_resettlement.setText(resettlement);
+        }
+
         tv_isSterilization.setText(isSterilization);
-        tv_note.setText(note);
+
+        if (note.equals("")) {
+            tv_note.setText("未提供");
+            tv_note.setTextColor(Color.parseColor("#bcaaa4"));
+        } else {
+            tv_note.setText(note);
+        }
     }
 }

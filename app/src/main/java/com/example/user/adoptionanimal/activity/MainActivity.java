@@ -1,13 +1,9 @@
 package com.example.user.adoptionanimal.activity;
 
-import android.content.ClipData;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -26,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView rv;
     private Spinner sp_sex;
@@ -101,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_main_search:
                 int sexPosition = sp_sex.getSelectedItemPosition();
                 int typePosition = sp_type.getSelectedItemPosition();
@@ -127,6 +123,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
                 updateAdapter();
+                if(adapter.getItemCount()==0) {
+                    Toast.makeText(this, "無相關資料", Toast.LENGTH_SHORT).show();
+                }
+
                 break;
         }
 
